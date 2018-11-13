@@ -2,8 +2,8 @@ import axios from 'axios';
 // axios.defaults.withCredentials=true;
 // 创建实例时设置配置的默认值
 var service = axios.create({
-  baseURL: 'http://192.168.1.110:8080/specimen',
-  // timeout: 5000 //请求超时的时间
+  baseURL: 'http://127.0.0.1:9528',
+  timeout: 5000 //请求超时的时间
   // withCredentials: true, //表示跨域请求时是否需要使用凭证
 });
 // 添加请求拦截器
