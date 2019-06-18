@@ -25,7 +25,8 @@ var db = require('../db');
  *         description: Successfully created
  */
 router.get('/list.html/:id', function (req, res, next) {
-    db.query('select * from users', [], function (results, fields) {
+    var id = req.params.id;
+    db.query('select * from users WHERE id=?', [id], function (results, fields) {
         res.send(results)
     })
 });
@@ -46,23 +47,23 @@ router.get('/list.html/:id', function (req, res, next) {
  *         required: true
  *         type: string
  *         schema:
- *           type: array
- *           items:
- *             required:
- *               - username
- *             properties:
- *               firstName:
- *                 type: string
- *               username:
- *                 type: string
+ *           type: object
+ *           properties:
+ *             fullname:
+ *               type: string
+ *             username:
+ *               type: string
  *     responses:
  *       200:
  *         description: 【成功】 返回 world
  */
 router.post('/jz.html', function (req, res, next) {
-    var sql = "select * from users WHERE username like ?";
+    var username = req.body.username;
+    var fullname = req.body.fullname;
+    console.log(username, fullname);
+    var sql = "select * from users WHERE username like ? and fullname like ?";
     // sql += " where var_name like ‘%"+data.varName+"%‘";
-    db.query(sql, ['%s%'], function (results, fields) {
+    db.query(sql, ['%' + username + '%', '%' + fullname + '%'], function (results, fields) {
         res.send(results)
     })
 });
