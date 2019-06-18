@@ -24,7 +24,7 @@ const options = {
         // swagger 页面基本信息 自由发挥
         info: {
             title: '豆瓣电影api',
-            description: '更多详情，查看      [http://www.ixilink.com](http://www.ixilink.com)',
+            description: '更多详情，查看      [https://github.com/15183854447/vuemysqlvue](https://github.com/15183854447/vuemysqlvue)',
             version: '1.0.0',
         },
         basePath: '',

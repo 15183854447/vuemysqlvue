@@ -2,20 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var db = require('../db');
-/**
- * @swagger
- * definitions:
- *   Puppy:
- *     properties:
- *       name:
- *         type: string
- *       breed:
- *         type: string
- *       age:
- *         type: integer
- *       sex:
- *         type: string
- */
+
 
 /**
  * @swagger
@@ -36,8 +23,6 @@ var db = require('../db');
  *     responses:
  *       200:
  *         description: Successfully created
- *         schema:
- *           $ref: '#/definitions/Puppy'
  */
 router.get('/list.html/:id', function (req, res, next) {
     db.query('select * from users', [], function (results, fields) {
@@ -60,11 +45,19 @@ router.get('/list.html/:id', function (req, res, next) {
  *         in: body
  *         required: true
  *         type: string
+ *         schema:
+ *           type: array
+ *           items:
+ *             required:
+ *               - username
+ *             properties:
+ *               firstName:
+ *                 type: string
+ *               username:
+ *                 type: string
  *     responses:
  *       200:
  *         description: 【成功】 返回 world
- *         schema:
- *           $ref: '#/definitions/Puppy'
  */
 router.post('/jz.html', function (req, res, next) {
     var sql = "select * from users WHERE username like ?";
