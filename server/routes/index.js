@@ -20,6 +20,11 @@ var db = require('../db');
  *         in: path
  *         required: true
  *         type: string
+ *       - name: token
+ *         description: token参数
+ *         in: header
+ *         required: true
+ *         type: string
  *     responses:
  *       200:
  *         description: Successfully created

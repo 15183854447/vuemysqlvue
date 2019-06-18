@@ -31,6 +31,23 @@ router.get('/apps', async (req, res, next) => {
  *   get:
  *     tags:
  *     - 用户
+ *     summary: 用户登录
+ */
+router.get('/info', function (req, res, next) {
+    console.log(req.query)
+    console.log(req.body)
+    res.json({'name':"张三","age":28})
+    // db.query('select * from users', [], function (results, fields) {
+    //     res.send(results)
+    // })
+});
+
+/**
+ *@swagger
+ * /users/info:
+ *   get:
+ *     tags:
+ *     - 用户
  *     summary: 用户查询
  */
 router.get('/info/:id', function (req, res, next) {
