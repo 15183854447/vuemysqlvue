@@ -13,6 +13,8 @@
     "express": "~4.15.5",
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "swagger-jsdoc": "^3.2.9",
+    "swagger-ui-express": "^1.0.8"
   }
 }
