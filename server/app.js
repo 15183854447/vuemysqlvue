@@ -96,7 +96,7 @@ app.listen('9528', function (err) {
         console.log('9528端口、服务器启动失败');
         return;
     }
-    console.log('9528端口、服务器启动成功')
+    console.log('服务启动成功,请访问:localhost:9528/api-docs')
 });
 
 module.exports = app;

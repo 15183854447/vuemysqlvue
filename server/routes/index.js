@@ -30,7 +30,6 @@ var db = require('../db');
  *         description: Successfully created
  */
 router.get('/list.html/:id', function (req, res, next) {
-    console.log(req.headers)
     var id = req.params.id;
     db.query('select * from users WHERE id=?', [id], function (results, fields) {
         res.send(results)
